@@ -404,15 +404,25 @@ html{scroll-behavior:smooth;}
 /* ─── THEME TOGGLE BUTTON ────────────────────────────────── */
 .theme-toggle{
   width:40px;height:40px;border-radius:11px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(14,20,34,0.04);
+  border:1px solid rgba(14,20,34,0.10);
   cursor:pointer;
   display:flex;align-items:center;justify-content:center;
   transition:all 0.25s var(--ease);
   flex-shrink:0;
-  color:rgba(255,255,255,0.92);
+  color:var(--text-mid);
 }
 .theme-toggle:hover{
+  background:rgba(79,70,229,0.10);
+  border-color:rgba(79,70,229,0.40);
+  color:var(--indigo-deep);
+}
+[data-theme="night"] .theme-toggle{
+  background:rgba(255,255,255,0.08);
+  border-color:rgba(255,255,255,0.16);
+  color:rgba(255,255,255,0.92);
+}
+[data-theme="night"] .theme-toggle:hover{
   background:rgba(129,140,248,0.22);
   border-color:rgba(129,140,248,0.5);
   color:#fff;
@@ -459,6 +469,14 @@ img{display:block;max-width:100%;}
 .btn-demo-nav:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(79,70,229,0.45);background:linear-gradient(135deg,#818CF8,#5B52E8);}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;flex-shrink:0;}
 .hamburger span{width:22px;height:2px;background:var(--text-dark);border-radius:2px;transition:0.3s;display:block;}
+/* Night: dark navbar restores light-on-dark */
+[data-theme="night"] .navbar{background:rgba(14,20,34,0.85);border-bottom-color:rgba(255,255,255,0.10);box-shadow:0 2px 24px rgba(0,0,0,0.5);}
+[data-theme="night"] .nav-logo{color:#fff;}
+[data-theme="night"] .nav-logo-text span{color:rgba(255,255,255,0.6);}
+[data-theme="night"] .nav-links li button{color:rgba(255,255,255,0.78);}
+[data-theme="night"] .nav-links li button:hover{color:#fff;background:rgba(129,140,248,0.18);}
+[data-theme="night"] .nav-links li button.active{color:#fff;background:rgba(129,140,248,0.20);}
+[data-theme="night"] .hamburger span{background:#fff;}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
